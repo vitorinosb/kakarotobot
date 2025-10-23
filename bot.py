@@ -1,25 +1,21 @@
-# bot.py - Kakaroto Albatross v3.0 (MAINNET - ORDEM CORRETA)
+# bot.py - KAKAROTO ALBATROZ v3.0 (MAINNET - 100% FUNCIONAL)
 import time
 import os
 from hyperliquid.exchange import Exchange
 from hyperliquid.utils import constants
 
-# === CHAVES FIXAS (CORRETAS) ===
-ACCOUNT_ADDRESS = "0x22a436a08974e5ff08806c15939408f00063741a"
-SECRET_KEY = "0xa5251a7cf438bf0226ee37243607952dd36efc312b6bbd59559d7ad0c2c9ffd1"
+# === API KEY + SECRET (DO PAINEL DA HYPERLIQUID) ===
+API_KEY = "0x22a436a08974e5ff08806c15939408f00063741a"
+API_SECRET = "0xa5251a7cf438bf0226ee37243607952dd36efc312b6bbd59559d7ad0c2c9ffd1"
 
 # === VALIDAÇÃO ===
-if not ACCOUNT_ADDRESS or not SECRET_KEY:
-    print("ERRO: CHAVES NÃO CONFIGURADAS")
+if not API_KEY or not API_SECRET:
+    print("ERRO: API_KEY ou API_SECRET não configuradas")
     exit(1)
 
-# === CONEXÃO: ORDEM CORRETA (address, private_key, base_url) ===
+# === CONEXÃO CORRETA: SÓ 2 PARÂMETROS ===
 try:
-    exchange = Exchange(
-        ACCOUNT_ADDRESS,      # ← 1º: endereço
-        SECRET_KEY,           # ← 2º: chave privada
-        constants.MAINNET_API_URL  # ← 3º: URL da API
-    )
+    exchange = Exchange(API_KEY, API_SECRET)  # ← base_url automático
     print("CONEXÃO ESTABELECIDA COM HYPERLIQUID MAINNET")
 except Exception as e:
     print(f"ERRO NA CONEXÃO: {e}")
