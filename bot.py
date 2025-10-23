@@ -13,7 +13,11 @@ if not ACCOUNT_ADDRESS or not SECRET_KEY:
     exit(1)
 
 # === CONEXÃO ===
-exchange = Exchange(ACCOUNT_ADDRESS, SECRET_KEY, base_url=constants.MAINNET_API_URL)
+exchange = Exchange(
+    user_address=ACCOUNT_ADDRESS,
+    secret_key=SECRET_KEY,
+    base_url=constants.MAINNET_API_URL
+)
 
 # === LOOP 24/7 ===
 print("KAKAROTO ALBATROZ v3.0 INICIADO (MAINNET)")
