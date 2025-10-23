@@ -14,7 +14,7 @@ ACCOUNT_ADDRESS = os.environ["ACCOUNT_ADDRESS"]
 SECRET_KEY = os.environ["SECRET_KEY"]
 
 info = Info(constants.MAINNET_API_URL, skip_ws=True)
-exchange = Exchange(ACCOUNT_ADDRESS, SECRET_KEY, base_url=constants.MAINNET_API_URL)
+exchange = Exchange(ACCOUNT_ADDRESS, SECRET_KEY)
 
 NY_TZ = pytz.timezone('America/New_York')
 position = None
